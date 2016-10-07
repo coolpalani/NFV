@@ -1,0 +1,14 @@
+# clone openbaton CLI
+# Build client
+
+
+---
+  - name: clone Open Baton CLI
+    git: repo=https://github.com/openbaton/openbaton-client.git
+         clone=yes
+         dest=~/openbaton-client
+         
+  - name: execute ./gradlew build
+     command: ~/devstack/openbaton-client/gradlew build 
+
+

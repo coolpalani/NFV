@@ -1,0 +1,4 @@
+--- 
+ - name: Stop devstack
+    command: chdir=~/devstack ./unstack.sh
+    ignore_errors: yes

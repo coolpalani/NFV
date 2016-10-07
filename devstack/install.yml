@@ -1,0 +1,10 @@
+- name: Install devstack
+  hosts: devstack-nodes
+  vars_files:
+  - customise.yml
+  remote_user: "{{ username }}"
+
+
+  roles:
+    - role: ubuntu
+    - role: install

@@ -1,0 +1,10 @@
+# Run stack
+# Run sample local.sh
+---  
+  - name: Run stack.sh
+    command: chdir=~/devstack ./stack.sh
+    ignore_errors: yes
+
+#  - name: Run local.sh
+#    command: chdir=~/devstack ./local.sh
+#    ignore_errors: yes

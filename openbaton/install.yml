@@ -1,0 +1,11 @@
+# Target OS: Ubuntu 14.04
+- name: Install OS depencies and Openbaton
+  hosts: openbaton-nodes
+  vars_files:
+  - customise.yml
+  remote_user: "{{ username }}"
+
+
+  roles:
+    - role: ubuntu
+    - role: install

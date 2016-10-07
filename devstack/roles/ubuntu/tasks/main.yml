@@ -1,0 +1,21 @@
+# FIX-THIS
+# 1) I have to use visudo to make sudoers not need passwords neet to fix
+---
+
+  - name: ensure a sudo group exists
+    group: name=sudo state=present
+
+#  - name: ensure users in the sudo group can sudo passwordless
+#    lineinfile: "dest=/etc/sudoers state=present
+#                 regexp='^%sudo' line='%sudo ALL=(ALL) NOPASSWD: ALL'
+#                 validate='visudo -cf %s'"
+
+  - name: apt-get update
+    become: true
+    become_method: sudo
+    apt: update-cache=yes
+
+  - name: apt-get install git
+    become: true
+    become_method: sudo
+    apt: name=git  update-cache=yes

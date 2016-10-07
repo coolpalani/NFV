@@ -1,0 +1,21 @@
+# Target OS : Ubuntu 16.04
+# clone devstack
+# download a local.conf
+# copy local.sh to devstack (stack.sh failed the first time this ran)
+
+---
+  - name: clone devstack
+    git: repo=https://git.openstack.org/openstack-dev/devstack
+         clone=yes
+         dest=~/devstack
+
+  - name: devstack local.conf
+    template: src=../../../templates/local.conf.j2
+              dest=~/devstack/local.conf
+
+
+  - name: devstack local.conf
+    template: src=../../../templates/local.sh.j2
+              dest=~/devstack/local.sh
+
+

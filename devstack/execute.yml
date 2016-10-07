@@ -1,0 +1,9 @@
+- name: Execute devstack
+  hosts: devstack-nodes
+  vars_files:
+  - customise.yml
+  remote_user: "{{ username }}"
+
+
+  roles:
+    - role: start
