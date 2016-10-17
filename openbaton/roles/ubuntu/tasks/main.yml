@@ -30,7 +30,12 @@
     become_method: sudo
     apt: name=curl  update-cache=yes
 
-  - name: apt-get install curl
+  - name: apt-get install jdk1.7
     become: true
     become_method: sudo
     apt: name=openjdk-7-jdk  update-cache=yes
+    
+  - name: apt-get install curl
+    become: true
+    become_method: sudo
+    apt: name=screen  update-cache=yes
